@@ -23,12 +23,13 @@ const character = {
 
 class CharacterListComponent extends React.Component<Props> {
   render() {
-    const {onAddCharacter} = this.props;
+    const {onAddCharacter, charactersList} = this.props;
     return (
       <>
         <FlatList
           style={styles.container}
-          data={this.props.charactersList}
+          extraData={charactersList}
+          data={charactersList}
           renderItem={({item}) => (
             <CharacterListItemComponent title={item.name} />
           )}

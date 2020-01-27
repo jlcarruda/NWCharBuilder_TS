@@ -1,14 +1,15 @@
-import {ADD_CHARACTER, DELETE_CHARACTER, ActionInterface} from '../../types';
+import {ADD_CHARACTER, DELETE_CHARACTER} from '../../types';
 import CharacterInterface from '../../../domain/character/interface';
+import {Dispatch} from 'redux';
 
-export const addCharacter = (
-  character: CharacterInterface,
-): ActionInterface => ({
-  type: ADD_CHARACTER,
-  data: character,
-});
+export const addCharacter = (character: CharacterInterface) => {
+  return (dispatch: Dispatch) => {
+    return dispatch({type: ADD_CHARACTER, data: character});
+  };
+};
 
-export const deleteCharacter = (id: string): ActionInterface => ({
-  type: DELETE_CHARACTER,
-  data: id,
-});
+export const deleteCharacter = (id: string) => {
+  return (dispatch: Dispatch) => {
+    return dispatch({type: DELETE_CHARACTER, data: id});
+  };
+};
