@@ -11,7 +11,7 @@ import {Props} from './types';
 const mapStateToProps = (state: AppState) => {
   return {
     charactersList: state.characters.charactersList,
-    character: state.characters.character,
+    // character: state.characters.character,
   };
 };
 

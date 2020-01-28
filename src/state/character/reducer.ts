@@ -8,7 +8,7 @@ import CharacterInterface from '../../domain/character/interface';
 
 const characters: CharacterInterface[] = [];
 const initialState: CharacterListState = {
-  characters,
+  charactersList: characters,
 };
 
 export const characterReducer = (
@@ -19,12 +19,14 @@ export const characterReducer = (
     case ADD_CHARACTER:
       return {
         ...state,
-        characters: state.characters.concat([<CharacterInterface>action.data]),
+        charactersList: state.charactersList.concat([
+          <CharacterInterface>action.data,
+        ]),
       };
     case DELETE_CHARACTER:
       return {
         ...state,
-        characters: state.characters.filter(
+        charactersList: state.charactersList.filter(
           (e: CharacterInterface) => e.getId() !== <string>action.data,
         ),
       };

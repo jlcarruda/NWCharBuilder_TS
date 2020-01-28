@@ -6,7 +6,7 @@ export const DELETE_CHARACTER = 'DELETE_CHARACTER';
 // STATES
 export type CharacterListState = {
   charactersList: CharacterInterface[];
-  character: CharacterInterface;
+  character?: CharacterInterface;
 };
 
 export type AppState = {
