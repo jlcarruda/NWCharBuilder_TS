@@ -16,7 +16,7 @@ export type dispatchProps = {
 
 export interface Props {
   charactersList: CharacterInterface[];
-  character: CharacterInterface;
+  character?: CharacterInterface;
   onAddCharacter: Function;
   onDeleteCharacter: Function;
 }
