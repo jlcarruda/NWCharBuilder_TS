@@ -1,5 +1,6 @@
 import React from 'react';
-import {FlatList, Button, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
+import {Button} from '@ui-kitten/components';
 import {Props} from './types';
 
 import CharacterListItemComponent from './listItemComponent';
@@ -35,11 +36,11 @@ class CharacterListComponent extends React.Component<Props> {
           )}
         />
         <Button
-          title="Add Character"
           onPress={() => {
             onAddCharacter(character);
-          }}
-        />
+          }}>
+          {'Add Character'}
+        </Button>
       </>
     );
   }
