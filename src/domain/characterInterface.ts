@@ -1,10 +1,8 @@
-import RaceInterface from '../race/interface';
-import {AbilitiesObjectInterface} from '../ability/interface';
+import RaceInterface from './system/races/raceInterface';
 
 export default interface CharacterInterface {
   name: string;
   race: RaceInterface;
-  abilities: AbilitiesObjectInterface;
   id: string;
   getId(): string;
   getAttribute(ability: string): number;
