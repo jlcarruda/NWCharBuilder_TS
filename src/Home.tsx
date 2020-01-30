@@ -6,7 +6,7 @@ import {Layout} from '@ui-kitten/components';
 export default class NWCharBuilder extends Component {
   render() {
     return (
-      <Layout style={style}>
+      <Layout style={style.layout}>
         <CharacterListContainer />
       </Layout>
     );
@@ -14,5 +14,7 @@ export default class NWCharBuilder extends Component {
 }
 
 const style = StyleSheet.create({
-  flex: 1,
+  layout: {
+    flex: 1,
+  },
 });

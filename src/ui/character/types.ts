@@ -1,4 +1,4 @@
-import CharacterInterface from '../../domain/character';
+import CharacterInterface from '../../domain/characterInterface';
 import {
   addCharacter,
   deleteCharacter,
