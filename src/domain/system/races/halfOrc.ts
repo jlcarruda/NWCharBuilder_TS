@@ -1,28 +1,34 @@
 import RaceInterface from './raceInterface';
-import {AbilitiesObject, Abilities, AbilityKey} from '../abilities';
+import {NWSystem, AbilitiesObject, AbilityKeyType} from '../NWSystem';
 
 export default class HalfOrc implements RaceInterface {
-  name: string;
-  bonuses: AbilitiesObject;
+  private name: string;
+  private system: NWSystem;
+  private primaryBonus: AbilitiesObject;
+  private secondaryBonusesOptions: AbilitiesObject[];
+  private abilities;
 
-  constructor() {
+  constructor(system: NWSystem) {
+    this.system = system;
     this.name = 'Half-Orc';
-    this.bonuses = {
-      [Abilities.DEX]: 2,
-      [Abilities.STR]: 2,
-      [Abilities.CON]: 2,
+    this.abilities = system.getAbilitiesConstants();
+
+    this.primaryBonus = {STR: +2};
+    this.secondaryBonusesOptions = [{CON: +2}, {DEX: +2}];
+  }
+
+  getAbilityBonuses(): {primary: AbilitiesObject; optional: AbilitiesObject[]} {
+    return {
+      primary: this.primaryBonus,
+      optional: this.secondaryBonusesOptions,
     };
   }
 
-  getBonuses(): AbilitiesObject {
-    return this.bonuses;
+  getBonus(attributeName: AbilityKeyType): number {
+    // return this.bonuses[attributeName] || 0;
   }
 
-  getBonus(attributeName: AbilityKey): number {
-    return this.bonuses[attributeName] || 0;
-  }
-
-  applyBonus(attribute: {name: AbilityKey; value: number}): number {
-    return attribute.value + (this.bonuses[attribute.name] || 0);
+  applyAbilityBonus(attribute: {name: AbilityKeyType; value: number}): number {
+    // return attribute.value + (this.bonuses[attribute.name] || 0);
   }
 }

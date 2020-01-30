@@ -1,7 +1,6 @@
-import {AbilitiesObject, AbilityKey} from '../abilities';
+import {AbilitiesObject, AbilityKeyType} from '../NWSystem';
 
 export default interface RaceInterface {
-  name: string;
-  getBonuses(): AbilitiesObject;
-  applyBonus(ability: {name: AbilityKey; value: number}): number;
+  getAbilityBonuses(): {primary: AbilitiesObject; optional: AbilitiesObject[]};
+  applyAbilityBonus(ability: {name: AbilityKeyType; value: number}): number;
 }

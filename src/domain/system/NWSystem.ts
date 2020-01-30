@@ -9,21 +9,21 @@ namespace Abilities {
     WIS = 'WIS',
     CHA = 'CHA',
   }
-
-  export type AbilityKey =
-    | Constants.STR
-    | Constants.DEX
-    | Constants.CON
-    | Constants.INT
-    | Constants.WIS
-    | Constants.CHA;
-
-  export type AbilitiesObject = {[P in AbilityKey]?: number};
 }
 
-class DNDSystem implements SystemInterface {
+export type AbilityKeyType =
+  | Abilities.Constants.STR
+  | Abilities.Constants.DEX
+  | Abilities.Constants.CON
+  | Abilities.Constants.INT
+  | Abilities.Constants.WIS
+  | Abilities.Constants.CHA;
+
+export type AbilitiesObject = {[P in AbilityKeyType]?: number};
+
+export class NWSystem implements SystemInterface {
   private abilitiesConstants;
-  private abilityKeys: Abilities.AbilityKey[];
+  private abilityKeys: AbilityKeyType[];
 
   constructor() {
     this.abilitiesConstants = Abilities.Constants;
@@ -40,5 +40,3 @@ class DNDSystem implements SystemInterface {
     return this.abilityKeys;
   }
 }
-
-export default DNDSystem;
