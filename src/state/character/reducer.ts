@@ -4,7 +4,7 @@ import {
   ActionInterface,
   CharacterListState,
 } from '../types';
-import CharacterInterface from '../../domain/character/interface';
+import CharacterInterface from '../../domain/characterInterface';
 
 const characters: CharacterInterface[] = [];
 const initialState: CharacterListState = {

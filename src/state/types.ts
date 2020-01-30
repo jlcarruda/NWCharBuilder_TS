@@ -1,4 +1,4 @@
-import CharacterInterface from '../domain/character/interface';
+import CharacterInterface from '../domain/characterInterface';
 
 export const ADD_CHARACTER = 'ADD_CHARACTER';
 export const DELETE_CHARACTER = 'DELETE_CHARACTER';

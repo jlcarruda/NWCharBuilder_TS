@@ -1,5 +1,5 @@
 import {ADD_CHARACTER, DELETE_CHARACTER} from '../../types';
-import CharacterInterface from '../../../domain/character/interface';
+import CharacterInterface from '../../../domain/characterInterface';
 import {Dispatch} from 'redux';
 
 export const addCharacter = (character: CharacterInterface) => {
